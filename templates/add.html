@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}Add A New Cafe{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1>Add a New Cafe</h1>
+
+  {% if not session.authenticated %}
+    <form method="POST">
+      <div class="mb-3">
+        <label for="access_key" class="form-label">Enter Access Key</label>
+        <input type="password" class="form-control" id="access_key" name="access_key" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  {% else %}
+    <form method="POST">
+      {{ form.hidden_tag() }}
+
+      <div class="mb-3">
+        {{ form.cafe.label(class="form-label") }}
+        {{ form.cafe(class="form-control") }}
+      </div>
+      <div class="mb-3">
+        {{ form.location.label(class="form-label") }}
+        {{ form.location(class="form-control") }}
+      </div>
+      <div class="mb-3">
+        {{ form.open.label(class="form-label") }}
+        {{ form.open(class="form-control") }}
+      </div>
+      <div class="mb-3">
+        {{ form.close.label(class="form-label") }}
+        {{ form.close(class="form-control") }}
+      </div>
+      <div class="mb-3">
+        {{ form.coffee_rating.label(class="form-label") }}
+        {{ form.coffee_rating(class="form-select") }}
+      </div>
+      <div class="mb-3">
+        {{ form.wifi_rating.label(class="form-label") }}
+        {{ form.wifi_rating(class="form-select") }}
+      </div>
+      <div class="mb-3">
+        {{ form.power_rating.label(class="form-label") }}
+        {{ form.power_rating(class="form-select") }}
+      </div>
+
+      {{ form.submit(class="btn btn-success") }}
+    </form>
+  {% endif %}
+</div>
+{% endblock %}

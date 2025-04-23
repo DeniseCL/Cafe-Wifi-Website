@@ -1,0 +1,34 @@
+# Virtual environment
+.venv/
+env/
+venv/
+.idea/
+
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Flask environment
+instance/
+.env
+*.env
+
+# VSCode and PyCharm files
+.vscode/
+
+# OS files
+.DS_Store
+
+# Byte-compiled and logs
+*.log
+*.sqlite3
+
+# Compiled HTML/static
+/static/*.tmp
+*.bak
+
+# macOS & Linux metadata
+Icon?
+Thumbs.db
